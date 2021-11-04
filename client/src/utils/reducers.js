@@ -1,14 +1,14 @@
 import { useReducer } from "react";
 import {
   UPDATE_PRODUCTS,
-  ADD_TO_CART,
-  UPDATE_CART_QUANTITY,
-  REMOVE_FROM_CART,
-  ADD_MULTIPLE_TO_CART,
+  ADD_TO_SHELF,
+  UPDATE_SHELF_QUANTITY,
+  REMOVE_FROM_SHELF,
+  ADD_MULTIPLE_TO_SHELF,
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
-  CLEAR_CART,
-  TOGGLE_CART
+  CLEAR_SHELF,
+  TOGGLE_SHELF
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -19,24 +19,24 @@ export const reducer = (state, action) => {
         products: [...action.products],
       };
 
-    case ADD_TO_CART:
+    case ADD_TO_SHELF:
       return {
         ...state,
-        cartOpen: true,
-        cart: [...state.cart, action.product],
+        shelfOpen: true,
+        shelf: [...state.shelf, action.product],
       };
 
-    case ADD_MULTIPLE_TO_CART:
+    case ADD_MULTIPLE_TO_SHELF:
       return {
         ...state,
-        cart: [...state.cart, ...action.products],
+        shelf: [...state.shelf, ...action.products],
       };
 
-    case UPDATE_CART_QUANTITY:
+    case UPDATE_SHELF_QUANTITY:
       return {
         ...state,
-        cartOpen: true,
-        cart: state.cart.map(product => {
+        shelfOpen: true,
+        shelf: state.shelf.map(product => {
           if (action._id === product._id) {
             product.purchaseQuantity = action.purchaseQuantity
           }
@@ -44,28 +44,28 @@ export const reducer = (state, action) => {
         })
       };
 
-    case REMOVE_FROM_CART:
-      let newState = state.cart.filter(product => {
+    case REMOVE_FROM_SHELF:
+      let newState = state.shelf.filter(product => {
         return product._id !== action._id;
       });
 
       return {
         ...state,
-        cartOpen: newState.length > 0,
-        cart: newState
+        shelfOpen: newState.length > 0,
+        shelf: newState
       };
 
-    case CLEAR_CART:
+    case CLEAR_SHELF:
       return {
         ...state,
-        cartOpen: false,
-        cart: []
+        shelfOpen: false,
+        shelf: []
       };
 
-    case TOGGLE_CART:
+    case TOGGLE_SHELF:
       return {
         ...state,
-        cartOpen: !state.cartOpen
+        shelfOpen: !state.shelfOpen
       };
 
     case UPDATE_CATEGORIES:

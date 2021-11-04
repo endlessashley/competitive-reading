@@ -19,7 +19,7 @@ export const ADD_ORDER = gql`
         _id
         name
         description
-        price
+        points
         quantity
         category {
           name
