@@ -6,20 +6,19 @@ const typeDefs = gql`
     name: String
   }
 
-  type Product {
+  type Book {
     _id: ID
-    name: String
-    description: String
+    title: String
+    author: String
     image: String
-    quantity: Int
-    price: Float
+    points: Int
     category: Category
   }
 
-  type Order {
+  type ReadBooks {
     _id: ID
-    purchaseDate: String
-    products: [Product]
+    ReadDate: String
+    books: [Book]
   }
 
   type User {
@@ -28,10 +27,6 @@ const typeDefs = gql`
     lastName: String
     email: String
     orders: [Order]
-  }
-
-  type Checkout {
-    session: ID
   }
 
   type Auth {
