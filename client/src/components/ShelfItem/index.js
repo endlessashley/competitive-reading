@@ -3,7 +3,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_SHELF, UPDATE_SHELF_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
-const ShelftItem = ({ item }) => {
+const ShelfItem = ({ item }) => {
 
   const [, dispatch] = useStoreContext();
 
