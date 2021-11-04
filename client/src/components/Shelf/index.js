@@ -9,6 +9,10 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_SHELF, ADD_MULTIPLE_TO_SHELF } from '../../utils/actions';
 import './style.css';
 
+import {GiBookshelf, GiTrophy, GiCardRandom} from "react-icons/gi"
+import ReactTooltip from 'react-tooltip';
+
+
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
@@ -67,15 +71,28 @@ const Shelf = () => {
     });
   }
 
-  if (!state.shelfOpen) {
-    return (
-      <div className="shelf-closed" onClick={toggleShelf}>
-        <span role="img" aria-label="trash">
-          🛒
-        </span>
-      </div>
-    );
-  }
+      if (!state.shelfOpen) {
+        return (
+          <div className="nav-key">
+          <div className="view-bookshelf" onClick={toggleShelf}>
+            <i className="nav-icons" alt="bookshelf" data-tip="View Your Bookshelf"><GiBookshelf /></i>
+            <ReactTooltip />
+          </div>
+          <div className="view-leaderboard">
+             {/* onClick={toggleCart}> */}
+            <i className="nav-icons" alt="trophy" data-tip="View Leaderboard"><GiTrophy /></i>
+            <ReactTooltip />
+          </div>
+          <div className="view-random">
+             {/* onClick={toggleCart}> */}
+            <i className="nav-icons" alt="random" data-tip="Get Random Book Recommendation"><GiCardRandom /></i>
+            <ReactTooltip />
+          </div>
+          </div>
+        );
+      }
+
+
 
   return (
     <div className="shelf">
