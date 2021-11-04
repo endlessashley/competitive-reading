@@ -40,15 +40,14 @@ function Nav() {
   }
 
   return (
-    <header className="flex-row px-1">
+    <header className="flex-row px-1 header">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          -Shop-Shop
+          <img src="./images/reader-set-go-logo.png" alt="reader set go logo"></img>
         </Link>
       </h1>
 
-      <nav>
+      <nav >
         {showNavigation()}
       </nav>
     </header>
