@@ -8,7 +8,7 @@ db.once('open', async () => {
     { name: 'Graphic Novels' },
     { name: 'Young Adult' },
     { name: 'Novels' },
-    { name: 'Non-Fiction' },
+    { name: 'Science Fiction' },
     { name: 'Fantasy' }
   ]);
 
@@ -297,8 +297,287 @@ db.once('open', async () => {
       points: 10,
       category: categories[1]._id
     },
-
-
+    {
+      title:'Don Quixote',
+      author:'Miguel De Cervantes',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Pilgrims Progress',
+      author:'John Bunyan',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Robinson Crusoe',
+      author:'Daniel Defoe',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Gullivers Travels',
+      author:'Jonathon Swift',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Tom Jones',
+      author:'Henry Fielding',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Clarissa',
+      author:'Samuel Richardson',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Tristram Shandy',
+      author:'Laurence Stern',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Dangerous Liasons',
+      author:'Pierre Choderlos De Laclos',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Emma',
+      author:'Jane Austen',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Frankenstein',
+      author:'Marry Shelley',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Nightmare Abbey',
+      author:'Thomas Love Peacock',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'The Black Sheep',
+      author:'Honore De Balzac',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'The Charterhouse of Parma',
+      author:'Stendhal',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'The Count of Monte Cristo',
+      author:'Alexandre Dumas',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Sybil',
+      author:'Benjamin Disraeli',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'David Copperfield',
+      author:'Charles Dickens',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Wuthering Heights',
+      author:'Emily Bronte',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Jane Eyre',
+      author:'Charlotte Bronte',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Vanity Fair',
+      author:'William Makepeace Thackery',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'The Scarlet Letter',
+      author:'Nathaniel Hawthorne',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    
   ]);
 
   console.log('products seeded');
