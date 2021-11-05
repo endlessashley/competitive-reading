@@ -579,10 +579,147 @@ db.once('open', async () => {
       points: 10,
       category: categories[3]._id
     },
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
+    {
+      title:'The Arabian Nights',
+      author:'Unknown',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:"LeMorte D'Arthur",
+      author:'Thomas Malory',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'Alices Adventures in Wonderland',
+      author:'Lewis Carroll',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'Through the Looking-Glass',
+      author:'Lewis Carroll',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'Five Children and It',
+      author:'E. Nesbit',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'Ozma of Oz',
+      author:'L. Frank Baum',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'Mary Poppins',
+      author:'P.L. Travers',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Lion, The Witch, and the Wardrobe',
+      author:'C.S. Lewis',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Palm-Wine Drinkard',
+      author:'Amos Tutuola',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Voyage of the Dawn Treader',
+      author:'C.S. Lewis',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Fellowship of the Ring',
+      author:'J.R.R. Tolkien',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'My Life in the Bush of Ghosts',
+      author:'Amos Tutuola',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Two Towers',
+      author:'J.R.R. Tolkien',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Return of the King',
+      author:'J.R.R. Tolkien',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'A Hero Born',
+      author:'Jin Yong',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Once & the Future King',
+      author:'T.H. White',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'James and the Giant Peach',
+      author:'Roald Dahl',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Phantom Tollbooth',
+      author:'Norton Juster',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'A Wrinkle in Time',
+      author:'Madeleine LEngle',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Wandering Unicorn',
+      author:'Manuel Mujica Lainez',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+
 
   ]);
 
