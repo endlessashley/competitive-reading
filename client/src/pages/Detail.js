@@ -5,18 +5,12 @@ import { useQuery } from '@apollo/client';
 import Shelf from '../components/Shelf';
 import { useStoreContext } from '../utils/GlobalState';
 import {
-<<<<<<< Updated upstream
-  REMOVE_FROM_SHELF,
   UPDATE_SHELF_QUANTITY,
-  ADD_TO_SHELF,
-=======
-  UPDATE_SHELF_QUANTITY,
->>>>>>> Stashed changes
-  UPDATE_PRODUCTS,
+  UPDATE_BOOKS,
   ADD_TO_SHELF,
   REMOVE_FROM_SHELF,
 } from '../utils/actions';
-import { QUERY_PRODUCTS } from '../utils/queries';
+import { QUERY_BOOKS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
 
@@ -24,38 +18,38 @@ function Detail() {
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
 
-  const [currentProduct, setCurrentProduct] = useState({});
+  const [currentBook, setCurrentBook] = useState({});
 
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const { loading, data } = useQuery(QUERY_BOOKS);
 
-  const { products, shelf } = state;
+  const { books, shelf } = state;
 
   useEffect(() => {
     // already in global store
-    if (products.length) {
-      setCurrentProduct(products.find((product) => product._id === id));
+    if (books.length) {
+      setCurrentBook(books.find((book) => book._id === id));
     }
     // retrieved from server
     else if (data) {
       dispatch({
-        type: UPDATE_PRODUCTS,
-        products: data.products,
+        type: UPDATE_BOOKS,
+        books: data.books,
       });
 
-      data.products.forEach((product) => {
-        idbPromise('products', 'put', product);
+      data.books.forEach((book) => {
+        idbPromise('books', 'put', book);
       });
     }
     // get cache from idb
     else if (!loading) {
-      idbPromise('products', 'get').then((indexedProducts) => {
+      idbPromise('books', 'get').then((indexedBooks) => {
         dispatch({
-          type: UPDATE_PRODUCTS,
-          products: indexedProducts,
+          type: UPDATE_BOOKS,
+          books: indexedBooks,
         });
       });
     }
-  }, [products, data, loading, dispatch, id]);
+  }, [books, data, loading, dispatch, id]);
 
   const addToShelf = () => {
     const itemInShelf = shelf.find((shelfItem) => shelfItem._id === id);
@@ -72,36 +66,36 @@ function Detail() {
     } else {
       dispatch({
         type: ADD_TO_SHELF,
-        product: { ...currentProduct, purchaseQuantity: 1 },
+        book: { ...currentBook, purchaseQuantity: 1 },
       });
-      idbPromise('shelf', 'put', { ...currentProduct, purchaseQuantity: 1 });
+      idbPromise('shelf', 'put', { ...currentBook, purchaseQuantity: 1 });
     }
   };
 
   const removeFromShelf = () => {
     dispatch({
       type: REMOVE_FROM_SHELF,
-      _id: currentProduct._id,
+      _id: currentBook._id,
     });
 
-    idbPromise('shelf', 'delete', { ...currentProduct });
+    idbPromise('shelf', 'delete', { ...currentBook });
   };
 
   return (
     <>
-      {currentProduct && shelf ? (
+      {currentBook && shelf ? (
         <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
+          <Link to="/">← Back to Home</Link>
 
-          <h2>{currentProduct.name}</h2>
+          <h2>{currentBook.name}</h2>
 
-          <p>{currentProduct.description}</p>
+          <p>{currentBook.description}</p>
 
           <p>
-            <strong>Points:</strong>${currentProduct.points}{' '}
+            <strong>Points:</strong>${currentBook.points}{' '}
             <button onClick={addToShelf}>Add to Shelf</button>
             <button
-              disabled={!shelf.find((p) => p._id === currentProduct._id)}
+              disabled={!shelf.find((p) => p._id === currentBook._id)}
               onClick={removeFromShelf}
             >
               Remove from Shelf
@@ -109,8 +103,8 @@ function Detail() {
           </p>
 
           <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
+            src={`/images/${currentBook.image}`}
+            alt={currentBook.name}
           />
         </div>
       ) : null}

@@ -583,7 +583,7 @@ db.once('open', async () => {
 
   ]);
 
-  console.log('products seeded');
+  console.log('books seeded');
 
   await User.deleteMany();
 
@@ -594,7 +594,7 @@ db.once('open', async () => {
     password: 'password12345',
     orders: [
       {
-        products: [products[0]._id, products[0]._id, products[1]._id]
+        books: [books[0]._id, books[0]._id, books[1]._id]
       }
     ]
   });
