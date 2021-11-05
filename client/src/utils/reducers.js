@@ -2,6 +2,7 @@ import { useReducer } from "react";
 import {
   UPDATE_PRODUCTS,
   ADD_TO_SHELF,
+<<<<<<< Updated upstream
   UPDATE_SHELF_QUANTITY,
   REMOVE_FROM_SHELF,
   ADD_MULTIPLE_TO_SHELF,
@@ -9,6 +10,16 @@ import {
   UPDATE_CURRENT_CATEGORY,
   CLEAR_SHELF,
   TOGGLE_SHELF
+=======
+  UPDATE_CATEGORIES,
+  UPDATE_CURRENT_CATEGORY,
+  ADD_MULTIPLE_TO_SHELF,
+  UPDATE_SHELF_QUANTITY,
+  REMOVE_FROM_SHELF,
+  CLEAR_SHELF,
+  TOGGLE_SHELF,
+  
+>>>>>>> Stashed changes
 } from "./actions";
 
 export const reducer = (state, action) => {

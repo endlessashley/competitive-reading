@@ -27,6 +27,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
+  background-color: #06174B;
 }
 
 h1,
@@ -35,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -47,6 +48,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  color: #EC5333;
 }
 
 h3 {
@@ -71,9 +73,10 @@ p {
 }
 
 a {
-  color: var(--tertiary);
+  color: white;
   text-decoration: none;
   font-weight: bold;
+  font-family: 'Open Sans', sans serif;
 }
 
 a:hover {
@@ -102,8 +105,9 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
-  background-color: var(--secondary);
+  margin: 5px;
+  background-color: #F3A847;
+  font-family: 'Fjalla One', sans serif;
 }
 
 button:hover {
@@ -125,6 +129,8 @@ span[role="img"] {
 
 form {
   width: 40%;
+  font-family: 'Open Sans', sans serif;
+  color: #EAC22F
 }
 
 input {
@@ -134,6 +140,7 @@ input {
   outline: none;
   border-radius: 3px;
   transition: box-shadow 0.2s;
+  font-family: 'Open Sans', sans serif;
 }
 
 input:focus {
@@ -204,6 +211,16 @@ input:focus {
 .card {
   width: 25%;
   text-align: center;
+}
+
+.category-card {
+  background-color: antiquewhite;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.category-card h2 {
+  color: #06174B;
 }
 
 .error-text {

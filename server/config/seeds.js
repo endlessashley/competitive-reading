@@ -156,7 +156,9 @@ db.once('open', async () => {
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,
+
     },
+
     {
       title:'Harry Potter Series',
       author:'J.K. Rowling',
@@ -578,6 +580,7 @@ db.once('open', async () => {
       category: categories[3]._id
     },
     
+
   ]);
 
   console.log('products seeded');

@@ -8,8 +8,12 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_SHELF, ADD_MULTIPLE_TO_SHELF } from '../../utils/actions';
 import './style.css';
+<<<<<<< Updated upstream
 
 import {GiBookshelf, GiTrophy, GiCardRandom} from "react-icons/gi"
+=======
+import {GiBookshelf, GiTrophy, GiCardRandom, GiStrong} from "react-icons/gi"
+>>>>>>> Stashed changes
 import ReactTooltip from 'react-tooltip';
 
 
@@ -30,8 +34,8 @@ const Shelf = () => {
     }
   }, [data]);
 
-  // If the cart's length or if the dispatch function is updated, check to see if the cart is empty.
-  // If so, invoke the getCart method and populate the cart with the existing from the session
+  // If the shelf's length or if the dispatch function is updated, check to see if the shelf is empty.
+  // If so, invoke the getShelf method and populate the shelf with the existing from the session
   useEffect(() => {
     async function getShelf() {
       const shelf = await idbPromise('shelf', 'get');
@@ -55,7 +59,7 @@ const Shelf = () => {
     return sum.toFixed(2);
   }
 
-  // When the submit checkout method is invoked, loop through each item in the cart
+  // When the submit checkout method is invoked, loop through each item in the shelf
   // Add each item id to the productIds array and then invoke the getCheckout query passing an object containing the id for all our products
   function submitCheckout() {
     const productIds = [];
@@ -79,12 +83,15 @@ const Shelf = () => {
             <ReactTooltip />
           </div>
           <div className="view-leaderboard">
-             {/* onClick={toggleCart}> */}
+             {/* onClick={toggleShelf}> */}
             <i className="nav-icons" alt="trophy" data-tip="View Leaderboard"><GiTrophy /></i>
             <ReactTooltip />
           </div>
+          <div className="choose-challenge">
+        <i className="nav-icons" alt="challenge" data-tip="Choose a Challenge"><GiStrong /></i>
+      </div>
           <div className="view-random">
-             {/* onClick={toggleCart}> */}
+             {/* onClick={toggleShelf}> */}
             <i className="nav-icons" alt="random" data-tip="Get Random Book Recommendation"><GiCardRandom /></i>
             <ReactTooltip />
           </div>
