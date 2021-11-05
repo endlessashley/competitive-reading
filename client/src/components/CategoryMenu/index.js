@@ -7,6 +7,7 @@ import {
 } from '../../utils/actions';
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
+import { Link } from "react-router-dom";
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
@@ -42,8 +43,8 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
-      <h2>Choose a Category:</h2>
+    <div className="category-card">
+      <h2>Choose a Challenge:</h2>
       {categories.map((item) => (
         <button
           key={item._id}
@@ -52,6 +53,7 @@ function CategoryMenu() {
           }}
         >
           {item.name}
+          <Link to="/challenges"></Link>
         </button>
       ))}
     </div>

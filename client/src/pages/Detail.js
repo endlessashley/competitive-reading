@@ -5,10 +5,16 @@ import { useQuery } from '@apollo/client';
 import Shelf from '../components/Shelf';
 import { useStoreContext } from '../utils/GlobalState';
 import {
+<<<<<<< Updated upstream
   REMOVE_FROM_SHELF,
   UPDATE_SHELF_QUANTITY,
   ADD_TO_SHELF,
+=======
+  UPDATE_SHELF_QUANTITY,
+>>>>>>> Stashed changes
   UPDATE_PRODUCTS,
+  ADD_TO_SHELF,
+  REMOVE_FROM_SHELF,
 } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';

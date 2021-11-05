@@ -9,7 +9,7 @@ import {
 
 const initialState = {
   products: [],
-  cart: [
+  shelf: [
     {
       _id: '1',
       name: 'Soup',
@@ -21,7 +21,7 @@ const initialState = {
       purchaseQuantity: 2
     }
   ],
-  cartOpen: false,
+  shelfOpen: false,
   categories: [{ name: 'Food' }],
   currentCategory: '1',
 };
