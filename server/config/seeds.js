@@ -156,7 +156,149 @@ db.once('open', async () => {
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,
-    }
+    },
+    {
+      title:'Harry Potter Series',
+      author:'J.K. Rowling',
+      image:'example.jpg',
+      points: 70,
+      category: categories[1]._id
+    },
+    {
+      title:'The Hunger Games series',
+      author:'Suzanne Collins',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'To Kill a Mockingbird',
+      author:'Harper Lee',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'The Fault in Our Stars',
+      author:'John Green',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'The Catcher in the Rye',
+      author:'J.D. Salinger',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Fahrenheit 451',
+      author:'Ray Bradbury',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Looking for Alaska',
+      author:'John Green',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'The Book Thief',
+      author:'Markus Zusak',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'The Giver series',
+      author:'Lois Lowry',
+      image:'example.jpg',
+      points: 30,
+      category: categories[1]._id
+    },
+    {
+      title:'The Hitchhikers Guide to the Galaxy',
+      author:'Douglas Adams',
+      image:'example.jpg',
+      points: 40,
+      category: categories[1]._id
+    },
+    {
+      title:'The Outsiders',
+      author:'S.E. Hinton',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'His Dark Materials series',
+      author:'Philip Pullman',
+      image:'example.jpg',
+      points: 30,
+      category: categories[1]._id
+    },
+    {
+      title:'The Perks of Being a Wallflower',
+      author:'Stephen Chbosky',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'The Princess Bride',
+      author:'William Goldman',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Lord of the Flies',
+      author:'WIlliam Golding',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Divergent series',
+      author:'Veronica Roth',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Paper Towns',
+      author:'John Green',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'The Mortal Instruments Series',
+      author:'Cassandra Clare',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'An Abundance of Katherines',
+      author:'John Green',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Flowers For ALgernon',
+      author:'Daniel Keyes',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+
+
   ]);
 
   console.log('products seeded');
