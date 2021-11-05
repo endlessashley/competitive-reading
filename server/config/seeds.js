@@ -440,146 +440,286 @@ db.once('open', async () => {
       category: categories[2]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Dune',
+      author:'Frank Herbert',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Martian',
+      author:'Andy Weir',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Neuromancer',
+      author:'William Gibson',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The War of the Worlds',
+      author:'H.G. Wells',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Ancillary Justice',
+      author:'Ann Leckie',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Giver',
+      author:'Lois Lowry',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Fifth Season',
+      author:'N.K. Jemisin',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Enders Game',
+      author:'Orson Scott Card',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Three Body Problem',
+      author:'Liu Cixin',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Martian Chronicles',
+      author:'Ray Bradbury',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Starship Troopers',
+      author:'Robert A. Heinlein',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Blazing World',
+      author:'Margaret Cavendish',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Simoqin Prophecies',
+      author:'Samit Basu',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Wind-Up Bird Chronicle',
+      author:'Haruki Murakami',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Recursion',
+      author:'Blake Crouch',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Hyperion',
+      author:'Dan Simmons',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Fall of Hyperion',
+      author:'Dan Simmons',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Out of the Silent Planet',
+      author:'C.S. Lewis',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Dream-Quest of Unknow Kadath',
+      author:'H.P. Lovecraft',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:"I, Robot",
+      author:'Isaac Asimov',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
-    
+    {
+      title:'The Arabian Nights',
+      author:'Unknown',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:"LeMorte D'Arthur",
+      author:'Thomas Malory',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'Alices Adventures in Wonderland',
+      author:'Lewis Carroll',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'Through the Looking-Glass',
+      author:'Lewis Carroll',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'Five Children and It',
+      author:'E. Nesbit',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'Ozma of Oz',
+      author:'L. Frank Baum',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'Mary Poppins',
+      author:'P.L. Travers',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Lion, The Witch, and the Wardrobe',
+      author:'C.S. Lewis',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Palm-Wine Drinkard',
+      author:'Amos Tutuola',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Voyage of the Dawn Treader',
+      author:'C.S. Lewis',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Fellowship of the Ring',
+      author:'J.R.R. Tolkien',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'My Life in the Bush of Ghosts',
+      author:'Amos Tutuola',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Two Towers',
+      author:'J.R.R. Tolkien',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Return of the King',
+      author:'J.R.R. Tolkien',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'A Hero Born',
+      author:'Jin Yong',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Once & the Future King',
+      author:'T.H. White',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'James and the Giant Peach',
+      author:'Roald Dahl',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Phantom Tollbooth',
+      author:'Norton Juster',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'A Wrinkle in Time',
+      author:'Madeleine LEngle',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+    {
+      title:'The Wandering Unicorn',
+      author:'Manuel Mujica Lainez',
+      image:'example.jpg',
+      points: 10,
+      category: categories[4]._id
+    },
+
 
   ]);
 
