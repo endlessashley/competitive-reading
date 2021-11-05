@@ -440,146 +440,149 @@ db.once('open', async () => {
       category: categories[2]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Dune',
+      author:'Frank Herbert',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Martian',
+      author:'Andy Weir',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Neuromancer',
+      author:'William Gibson',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The War of the Worlds',
+      author:'H.G. Wells',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Ancillary Justice',
+      author:'Ann Leckie',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Giver',
+      author:'Lois Lowry',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Fifth Season',
+      author:'N.K. Jemisin',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Enders Game',
+      author:'Orson Scott Card',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Three Body Problem',
+      author:'Liu Cixin',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Martian Chronicles',
+      author:'Ray Bradbury',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Starship Troopers',
+      author:'Robert A. Heinlein',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Blazing World',
+      author:'Margaret Cavendish',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Simoqin Prophecies',
+      author:'Samit Basu',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Wind-Up Bird Chronicle',
+      author:'Haruki Murakami',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Recursion',
+      author:'Blake Crouch',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Hyperion',
+      author:'Dan Simmons',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Fall of Hyperion',
+      author:'Dan Simmons',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'Out of the Silent Planet',
+      author:'C.S. Lewis',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:'The Dream-Quest of Unknow Kadath',
+      author:'H.P. Lovecraft',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:
-      author:
-      image:'example.jpg'
+      title:"I, Robot",
+      author:'Isaac Asimov',
+      image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
 
   ]);
 
