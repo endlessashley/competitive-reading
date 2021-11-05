@@ -8,7 +8,7 @@ db.once('open', async () => {
     { name: 'Graphic Novels' },
     { name: 'Young Adult' },
     { name: 'Novels' },
-    { name: 'Non-Fiction' },
+    { name: 'Science Fiction' },
     { name: 'Fantasy' }
   ]);
 
@@ -18,7 +18,6 @@ db.once('open', async () => {
 
   const book = await Book.insertMany([
     {
-<<<<<<< Updated upstream
       title: 'V for Vendetta',
       author: 'Alan Moore',
       image: 'example.jpg',
@@ -157,114 +156,431 @@ db.once('open', async () => {
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,
-=======
-      name: 'Tin of Cookies',
-      description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
-      category: categories[0]._id,
-      price: 2.99,
-      quantity: 500
+
+    },
+
+    {
+      title:'Harry Potter Series',
+      author:'J.K. Rowling',
+      image:'example.jpg',
+      points: 70,
+      category: categories[1]._id
     },
     {
-      name: 'Canned Coffee',
-      description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'canned-coffee.jpg',
-      category: categories[0]._id,
-      price: 1.99,
-      quantity: 500
+      title:'The Hunger Games series',
+      author:'Suzanne Collins',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
     },
     {
-      name: 'Toilet Paper',
-      category: categories[1]._id,
-      description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
-      price: 7.99,
-      quantity: 20
+      title:'To Kill a Mockingbird',
+      author:'Harper Lee',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
     },
     {
-      name: 'Handmade Soap',
-      category: categories[1]._id,
-      description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
-      price: 3.99,
-      quantity: 50
+      title:'The Fault in Our Stars',
+      author:'John Green',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
     },
     {
-      name: 'Set of Wooden Spoons',
-      category: categories[1]._id,
-      description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'wooden-spoons.jpg',
-      price: 14.99,
-      quantity: 100
+      title:'The Catcher in the Rye',
+      author:'J.D. Salinger',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
     },
     {
-      name: 'Camera',
-      category: categories[2]._id,
-      description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'camera.jpg',
-      price: 399.99,
-      quantity: 30
+      title:'Fahrenheit 451',
+      author:'Ray Bradbury',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
     },
     {
-      name: 'Tablet',
-      category: categories[2]._id,
-      description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
-      image: 'tablet.jpg',
-      price: 199.99,
-      quantity: 30
+      title:'Looking for Alaska',
+      author:'John Green',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
     },
     {
-      name: 'Tales at Bedtime',
-      category: categories[3]._id,
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
-      image: 'bedtime-book.jpg',
-      price: 9.99,
-      quantity: 100
+      title:'The Book Thief',
+      author:'Markus Zusak',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
     },
     {
-      name: 'Spinning Top',
-      category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'spinning-top.jpg',
-      price: 1.99,
-      quantity: 1000
+      title:'The Giver series',
+      author:'Lois Lowry',
+      image:'example.jpg',
+      points: 30,
+      category: categories[1]._id
     },
     {
-      name: 'Set of Plastic Horses',
-      category: categories[4]._id,
-      description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
-      image: 'plastic-horses.jpg',
-      price: 2.99,
-      quantity: 1000
+      title:'The Hitchhikers Guide to the Galaxy',
+      author:'Douglas Adams',
+      image:'example.jpg',
+      points: 40,
+      category: categories[1]._id
     },
     {
-      name: 'Teddy Bear',
-      category: categories[4]._id,
-      description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'teddy-bear.jpg',
-      price: 7.99,
-      quantity: 100
+      title:'The Outsiders',
+      author:'S.E. Hinton',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
     },
     {
-      name: 'Alphabet Blocks',
-      category: categories[4]._id,
-      description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'example.jpg',
-      price: 9.99,
-      quantity: 600
->>>>>>> Stashed changes
-    }
+      title:'His Dark Materials series',
+      author:'Philip Pullman',
+      image:'example.jpg',
+      points: 30,
+      category: categories[1]._id
+    },
+    {
+      title:'The Perks of Being a Wallflower',
+      author:'Stephen Chbosky',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'The Princess Bride',
+      author:'William Goldman',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Lord of the Flies',
+      author:'WIlliam Golding',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Divergent series',
+      author:'Veronica Roth',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Paper Towns',
+      author:'John Green',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'The Mortal Instruments Series',
+      author:'Cassandra Clare',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'An Abundance of Katherines',
+      author:'John Green',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Flowers For ALgernon',
+      author:'Daniel Keyes',
+      image:'example.jpg',
+      points: 10,
+      category: categories[1]._id
+    },
+    {
+      title:'Don Quixote',
+      author:'Miguel De Cervantes',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Pilgrims Progress',
+      author:'John Bunyan',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Robinson Crusoe',
+      author:'Daniel Defoe',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Gullivers Travels',
+      author:'Jonathon Swift',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Tom Jones',
+      author:'Henry Fielding',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Clarissa',
+      author:'Samuel Richardson',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Tristram Shandy',
+      author:'Laurence Stern',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Dangerous Liasons',
+      author:'Pierre Choderlos De Laclos',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Emma',
+      author:'Jane Austen',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Frankenstein',
+      author:'Marry Shelley',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Nightmare Abbey',
+      author:'Thomas Love Peacock',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'The Black Sheep',
+      author:'Honore De Balzac',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'The Charterhouse of Parma',
+      author:'Stendhal',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'The Count of Monte Cristo',
+      author:'Alexandre Dumas',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Sybil',
+      author:'Benjamin Disraeli',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'David Copperfield',
+      author:'Charles Dickens',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Wuthering Heights',
+      author:'Emily Bronte',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Jane Eyre',
+      author:'Charlotte Bronte',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'Vanity Fair',
+      author:'William Makepeace Thackery',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:'The Scarlet Letter',
+      author:'Nathaniel Hawthorne',
+      image:'example.jpg',
+      points: 10,
+      category: categories[2]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    {
+      title:
+      author:
+      image:'example.jpg'
+      points: 10,
+      category: categories[3]._id
+    },
+    
+
   ]);
 
   console.log('products seeded');
