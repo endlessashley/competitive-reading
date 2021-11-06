@@ -9,11 +9,11 @@ function BookItem(item) {
   const [state, dispatch] = useStoreContext();
 
   const {
-    image,
+    // image,
     name,
     _id,
     points,
-    quantity
+    // quantity
   } = item;
 
   const { shelf } = state
@@ -42,17 +42,17 @@ function BookItem(item) {
   return (
     <div className="card px-1 py-1">
       <Link to={`/books/${_id}`}>
-        <img
+        {/* <img
           alt={name}
           src={`/images/${image}`}
-        />
+        /> */}
         <p>{name}</p>
       </Link>
       <div>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${points}</span>
+        {/* <div>{quantity} {pluralize("item", quantity)} in stock</div> */}
+        <span>{points} points</span>
       </div>
-      <button onClick={addToShelf}>Add to Self</button>
+      <button onClick={addToShelf}>Add to Shelf</button>
     </div>
   );
 }
