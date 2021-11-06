@@ -7,7 +7,7 @@ import { QUERY_BOOKS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 
-function ViewChallenges() {
+function BookList() {
   const [state, dispatch] = useStoreContext();
 
   const { currentCategory } = state;
@@ -54,7 +54,7 @@ function ViewChallenges() {
               _id={book._id}
               image={book.image}
               name={book.name}
-              price={book.price}
+              points={book.points}
               quantity={book.quantity}
             />
           ))}
@@ -67,4 +67,4 @@ function ViewChallenges() {
   );
 }
 
-export default ViewChallenges;
+export default BookList;

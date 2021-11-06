@@ -8,12 +8,7 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_SHELF, ADD_MULTIPLE_TO_SHELF } from '../../utils/actions';
 import './style.css';
-<<<<<<< Updated upstream
-
-import {GiBookshelf, GiTrophy, GiCardRandom} from "react-icons/gi"
-=======
 import {GiBookshelf, GiTrophy, GiCardRandom, GiStrong} from "react-icons/gi"
->>>>>>> Stashed changes
 import ReactTooltip from 'react-tooltip';
 
 
@@ -39,7 +34,7 @@ const Shelf = () => {
   useEffect(() => {
     async function getShelf() {
       const shelf = await idbPromise('shelf', 'get');
-      dispatch({ type: ADD_MULTIPLE_TO_SHELF, products: [...shelf] });
+      dispatch({ type: ADD_MULTIPLE_TO_SHELF, books: [...shelf] });
     }
 
     if (!state.shelf.length) {
@@ -60,18 +55,18 @@ const Shelf = () => {
   }
 
   // When the submit checkout method is invoked, loop through each item in the shelf
-  // Add each item id to the productIds array and then invoke the getCheckout query passing an object containing the id for all our products
+  // Add each item id to the bookIds array and then invoke the getCheckout query passing an object containing the id for all our books
   function submitCheckout() {
-    const productIds = [];
+    const bookIds = [];
 
     state.shelf.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
-        productIds.push(item._id);
+        bookIds.push(item._id);
       }
     });
 
     getCheckout({
-      variables: { products: productIds },
+      variables: { books: bookIds },
     });
   }
 

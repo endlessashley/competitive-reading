@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Book, Category, Order } = require('../models');
+const { User, Book, Category, ReadBook } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -8,7 +8,7 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
-    products: async (parent, { category, name }) => {
+    books: async (parent, { category, name }) => {
       const params = {};
 
       if (category) {
@@ -21,54 +21,54 @@ const resolvers = {
         };
       }
 
-      return await Product.find(params).populate('category');
+      return await Book.find(params).populate('category');
     },
-    product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate('category');
+    book: async (parent, { _id }) => {
+      return await Book.findById(_id).populate('category');
     },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'orders.products',
+          path: 'readBooks.books',
           populate: 'category'
         });
 
-        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+        user.readBooks.sort((a, b) => b.readDate - a.readDate);
 
         return user;
       }
 
       throw new AuthenticationError('Not logged in');
     },
-    order: async (parent, { _id }, context) => {
+    readBook: async (parent, { _id }, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'orders.products',
+          path: 'readBooks.books',
           populate: 'category'
         });
 
-        return user.orders.id(_id);
+        return user.readBooks.id(_id);
       }
 
       throw new AuthenticationError('Not logged in');
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
-      const order = new Order({ products: args.products });
+      const readBook = new ReadBook({ books: args.books });
       const line_items = [];
 
-      const { products } = await order.populate('products').execPopulate();
+      const { books } = await readBook.populate('books').execPopulate();
 
-      for (let i = 0; i < products.length; i++) {
-        const product = await stripe.products.create({
-          name: products[i].name,
-          description: products[i].description,
-          images: [`${url}/images/${products[i].image}`]
+      for (let i = 0; i < books.length; i++) {
+        const book = await stripe.books.create({
+          name: books[i].name,
+          description: books[i].description,
+          images: [`${url}/images/${books[i].image}`]
         });
 
         const price = await stripe.prices.create({
-          product: product.id,
-          unit_amount: products[i].price * 100,
+          book: book.id,
+          unit_amount: books[i].price * 100,
           currency: 'usd',
         });
 
@@ -96,14 +96,14 @@ const resolvers = {
 
       return { token, user };
     },
-    addOrder: async (parent, { products }, context) => {
+    addReadBook: async (parent, { books }, context) => {
       console.log(context);
       if (context.user) {
-        const order = new Order({ products });
+        const readBook = new ReadBook({ books });
 
-        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+        await User.findByIdAndUpdate(context.user._id, { $push: { readBooks: readBook } });
 
-        return order;
+        return readBook;
       }
 
       throw new AuthenticationError('Not logged in');
@@ -115,10 +115,10 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    updateProduct: async (parent, { _id, quantity }) => {
+    updateBook: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
 
-      return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+      return await Book.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import Jumbotron from '../components/Jumbotron';
-import { ADD_ORDER } from '../utils/mutations';
+import { ADD_READBOOK } from '../utils/mutations';
 import { idbPromise } from '../utils/helpers';
 
 function Success() {
-  const [addOrder] = useMutation(ADD_ORDER);
+  const [addReadBook] = useMutation(ADD_READBOOK);
 
   useEffect(() => {
-    async function saveOrder() {
+    async function saveReadBook() {
       const cart = await idbPromise('cart', 'get');
-      const products = cart.map((item) => item._id);
+      const books = shelf.map((item) => item._id);
 
-      if (products.length) {
-        const { data } = await addOrder({ variables: { products } });
-        const productData = data.addOrder.products;
+      if (books.length) {
+        const { data } = await addReadBook({ variables: { books } });
+        const bookData = data.addReadBook.books;
 
-        productData.forEach((item) => {
-          idbPromise('cart', 'delete', item);
+        bookData.forEach((item) => {
+          idbPromise('shelf', 'delete', item);
         });
       }
 
@@ -26,8 +26,8 @@ function Success() {
       }, 3000);
     }
 
-    saveOrder();
-  }, [addOrder]);
+    saveReadBook();
+  }, [addReadBook]);
 
   return (
     <div>
