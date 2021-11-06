@@ -47,7 +47,7 @@ const ShelfItem = ({ item }) => {
       <div>
         <div>{item.name}, ${item.price}</div>
         <div>
-          <span>Qty:</span>
+          <span>Times Read:</span>
           <input
             type="number"
             placeholder="1"
@@ -59,7 +59,7 @@ const ShelfItem = ({ item }) => {
             aria-label="trash"
             onClick={() => removeFromShelf(item)}
           >
-            🗑️
+            ❌
           </span>
         </div>
       </div>

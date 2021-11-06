@@ -51,7 +51,7 @@ const Shelf = () => {
     state.shelf.forEach((item) => {
       sum += item.points * item.purchaseQuantity;
     });
-    return sum.toFixed(2);
+    return sum;
   }
 
   // When the submit checkout method is invoked, loop through each item in the shelf
