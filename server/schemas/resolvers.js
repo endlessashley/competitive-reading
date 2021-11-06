@@ -62,18 +62,18 @@ const resolvers = {
       for (let i = 0; i < books.length; i++) {
         const book = await stripe.books.create({
           name: books[i].name,
-          description: books[i].description,
+          author: books[i].author,
           images: [`${url}/images/${books[i].image}`]
         });
 
-        const price = await stripe.prices.create({
-          book: book.id,
-          unit_amount: books[i].price * 100,
-          currency: 'usd',
-        });
+        // const price = await stripe.prices.create({
+        //   book: book.id,
+        //   unit_amount: books[i].price * 100,
+        //   currency: 'usd',
+        // });
 
         line_items.push({
-          price: price.id,
+          points: points.id,
           quantity: 1
         });
       }
