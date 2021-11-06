@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
 import BookItem from '../BookItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_BOOKS } from '../../utils/actions';
-import { useQuery } from '@apollo/client';
 import { QUERY_BOOKS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
@@ -20,6 +20,7 @@ function BookList() {
         type: UPDATE_BOOKS,
         books: data.books,
       });
+      console.log(data)
       data.books.forEach((book) => {
         idbPromise('books', 'put', book);
       });
@@ -52,10 +53,11 @@ function BookList() {
             <BookItem
               key={book._id}
               _id={book._id}
-              image={book.image}
+              // image={book.image}
               name={book.name}
+              author={book.author}
               points={book.points}
-              quantity={book.quantity}
+              // quantity={book.quantity}
             />
           ))}
         </div>

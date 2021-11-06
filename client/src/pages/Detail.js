@@ -89,7 +89,7 @@ function Detail() {
 
           <h2>{currentBook.name}</h2>
 
-          <p>{currentBook.description}</p>
+          <p>{currentBook.author}</p>
 
           <p>
             <strong>Points:</strong>${currentBook.points}{' '}

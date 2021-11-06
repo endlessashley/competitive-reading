@@ -13,12 +13,12 @@ const initialState = {
     {
       _id: '1',
       name: 'Soup',
-      purchaseQuantity: 1
+      // purchaseQuantity: 1
     },
     {
       _id: '2',
       name: 'Bread',
-      purchaseQuantity: 2
+      // purchaseQuantity: 2
     }
   ],
   shelfOpen: false,
