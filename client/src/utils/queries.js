@@ -5,9 +5,9 @@ export const QUERY_BOOKS = gql`
     books(category: $category) {
       _id
       name
-      description
+      author
       points
-      quantity
+
       image
       category {
         _id
@@ -29,9 +29,9 @@ export const QUERY_ALL_BOOKS = gql`
     books {
       _id
       name
-      description
+      author
       points
-      quantity
+
       category {
         name
       }
@@ -59,9 +59,9 @@ export const QUERY_USER = gql`
         books {
           _id
           name
-          description
+          author
           points
-          quantity
+    
           image
         }
       }
