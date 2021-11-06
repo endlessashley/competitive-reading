@@ -14,144 +14,144 @@ db.once('open', async () => {
 
   console.log('Categories Seeded');
 
-  await Books.deleteMany();
+  await Book.deleteMany();
 
-  const book = await Book.insertMany([
+  const books = await Book.insertMany([
     {
-      title: 'V for Vendetta',
+      name: 'V for Vendetta',
       author: 'Alan Moore',
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,  
     },
     {
-      title: 'Nimona',
+      name: 'Nimona',
       author: 'Noelle Stevenson',
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Watchmen',
+      name:'Watchmen',
       author:'Alan Moore',
       image:'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Maus: A Survivors Tale',
+      name:'Maus: A Survivors Tale',
       author: 'Art Spiegelman',
       image:'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Daytripper',
+      name:'Daytripper',
       author:'Gabriel Ba and Fabio Moon',
       image:'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'This One Summer',
+      name:'This One Summer',
       author: 'Mariko Tamaki and Jillian Tamaki',
       image:'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Sweet Tooth',
+      name:'Sweet Tooth',
       author:'Jeff Lemire',
       image:'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Through the Woods',
+      name:'Through the Woods',
       author:'Emily Carroll',
       image:'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Blankets',
+      name:'Blankets',
       author:'Craig Thompson',
       image:'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'My Favorite Thing is Monsters',
+      name:'My Favorite Thing is Monsters',
       author: 'Emil Ferris',
       image:'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Jimmy Corrigan: The Smartest Kid on Earth',
+      name:'Jimmy Corrigan: The Smartest Kid on Earth',
       author:'Chris Ware',
       image:'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Blacksad',
+      name:'Blacksad',
       author:'Juan Diaz Canales and Juanjo Guarnido',
       image:'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Here',
+      name:'Here',
       author:'Richard McGuire',
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'How To Be Happy',
+      name:'How To Be Happy',
       author:'Eleanor Davis',
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Megahex',
+      name:'Megahex',
       author:'Simon Hanselmann',
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'A Contract With God',
+      name:'A Contract With God',
       author:'Will Eisner',
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'The Color of Earth (trilogy)',
+      name:'The Color of Earth (trilogy)',
       author: 'Kim Dong Hwa',
       image: 'example.jpg',
       points: 30,
       category: categories[0]._id,
     },
     {
-      title: 'The Encyclopdia of Early Earth',
+      name: 'The Encyclopdia of Early Earth',
       author:'Isabel Greenberg',
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'Monstress',
+      name:'Monstress',
       author:'Marjorie Liu and Sana Takeda',
       image: 'example.jpg',
       points: 10,
       category: categories[0]._id,
     },
     {
-      title:'The Wicked + The Divine',
+      name:'The Wicked + The Divine',
       author:'Kieron Gillen and Jamie McKelvie',
       image: 'example.jpg',
       points: 10,
@@ -160,560 +160,560 @@ db.once('open', async () => {
     },
 
     {
-      title:'Harry Potter Series',
+      name:'Harry Potter Series',
       author:'J.K. Rowling',
       image:'example.jpg',
       points: 70,
       category: categories[1]._id
     },
     {
-      title:'The Hunger Games series',
+      name:'The Hunger Games series',
       author:'Suzanne Collins',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'To Kill a Mockingbird',
+      name:'To Kill a Mockingbird',
       author:'Harper Lee',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'The Fault in Our Stars',
+      name:'The Fault in Our Stars',
       author:'John Green',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'The Catcher in the Rye',
+      name:'The Catcher in the Rye',
       author:'J.D. Salinger',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'Fahrenheit 451',
+      name:'Fahrenheit 451',
       author:'Ray Bradbury',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'Looking for Alaska',
+      name:'Looking for Alaska',
       author:'John Green',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'The Book Thief',
+      name:'The Book Thief',
       author:'Markus Zusak',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'The Giver series',
+      name:'The Giver series',
       author:'Lois Lowry',
       image:'example.jpg',
       points: 30,
       category: categories[1]._id
     },
     {
-      title:'The Hitchhikers Guide to the Galaxy',
+      name:'The Hitchhikers Guide to the Galaxy',
       author:'Douglas Adams',
       image:'example.jpg',
       points: 40,
       category: categories[1]._id
     },
     {
-      title:'The Outsiders',
+      name:'The Outsiders',
       author:'S.E. Hinton',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'His Dark Materials series',
+      name:'His Dark Materials series',
       author:'Philip Pullman',
       image:'example.jpg',
       points: 30,
       category: categories[1]._id
     },
     {
-      title:'The Perks of Being a Wallflower',
+      name:'The Perks of Being a Wallflower',
       author:'Stephen Chbosky',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'The Princess Bride',
+      name:'The Princess Bride',
       author:'William Goldman',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'Lord of the Flies',
+      name:'Lord of the Flies',
       author:'WIlliam Golding',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'Divergent series',
+      name:'Divergent series',
       author:'Veronica Roth',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'Paper Towns',
+      name:'Paper Towns',
       author:'John Green',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'The Mortal Instruments Series',
+      name:'The Mortal Instruments Series',
       author:'Cassandra Clare',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'An Abundance of Katherines',
+      name:'An Abundance of Katherines',
       author:'John Green',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'Flowers For ALgernon',
+      name:'Flowers For ALgernon',
       author:'Daniel Keyes',
       image:'example.jpg',
       points: 10,
       category: categories[1]._id
     },
     {
-      title:'Don Quixote',
+      name:'Don Quixote',
       author:'Miguel De Cervantes',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Pilgrims Progress',
+      name:'Pilgrims Progress',
       author:'John Bunyan',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Robinson Crusoe',
+      name:'Robinson Crusoe',
       author:'Daniel Defoe',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Gullivers Travels',
+      name:'Gullivers Travels',
       author:'Jonathon Swift',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Tom Jones',
+      name:'Tom Jones',
       author:'Henry Fielding',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Clarissa',
+      name:'Clarissa',
       author:'Samuel Richardson',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Tristram Shandy',
+      name:'Tristram Shandy',
       author:'Laurence Stern',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Dangerous Liasons',
+      name:'Dangerous Liasons',
       author:'Pierre Choderlos De Laclos',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Emma',
+      name:'Emma',
       author:'Jane Austen',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Frankenstein',
+      name:'Frankenstein',
       author:'Marry Shelley',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Nightmare Abbey',
+      name:'Nightmare Abbey',
       author:'Thomas Love Peacock',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'The Black Sheep',
+      name:'The Black Sheep',
       author:'Honore De Balzac',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'The Charterhouse of Parma',
+      name:'The Charterhouse of Parma',
       author:'Stendhal',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'The Count of Monte Cristo',
+      name:'The Count of Monte Cristo',
       author:'Alexandre Dumas',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Sybil',
+      name:'Sybil',
       author:'Benjamin Disraeli',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'David Copperfield',
+      name:'David Copperfield',
       author:'Charles Dickens',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Wuthering Heights',
+      name:'Wuthering Heights',
       author:'Emily Bronte',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Jane Eyre',
+      name:'Jane Eyre',
       author:'Charlotte Bronte',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Vanity Fair',
+      name:'Vanity Fair',
       author:'William Makepeace Thackery',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'The Scarlet Letter',
+      name:'The Scarlet Letter',
       author:'Nathaniel Hawthorne',
       image:'example.jpg',
       points: 10,
       category: categories[2]._id
     },
     {
-      title:'Dune',
+      name:'Dune',
       author:'Frank Herbert',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Martian',
+      name:'The Martian',
       author:'Andy Weir',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'Neuromancer',
+      name:'Neuromancer',
       author:'William Gibson',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The War of the Worlds',
+      name:'The War of the Worlds',
       author:'H.G. Wells',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'Ancillary Justice',
+      name:'Ancillary Justice',
       author:'Ann Leckie',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Giver',
+      name:'The Giver',
       author:'Lois Lowry',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Fifth Season',
+      name:'The Fifth Season',
       author:'N.K. Jemisin',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'Enders Game',
+      name:'Enders Game',
       author:'Orson Scott Card',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Three Body Problem',
+      name:'The Three Body Problem',
       author:'Liu Cixin',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Martian Chronicles',
+      name:'The Martian Chronicles',
       author:'Ray Bradbury',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'Starship Troopers',
+      name:'Starship Troopers',
       author:'Robert A. Heinlein',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Blazing World',
+      name:'The Blazing World',
       author:'Margaret Cavendish',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Simoqin Prophecies',
+      name:'The Simoqin Prophecies',
       author:'Samit Basu',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Wind-Up Bird Chronicle',
+      name:'The Wind-Up Bird Chronicle',
       author:'Haruki Murakami',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'Recursion',
+      name:'Recursion',
       author:'Blake Crouch',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'Hyperion',
+      name:'Hyperion',
       author:'Dan Simmons',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Fall of Hyperion',
+      name:'The Fall of Hyperion',
       author:'Dan Simmons',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'Out of the Silent Planet',
+      name:'Out of the Silent Planet',
       author:'C.S. Lewis',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Dream-Quest of Unknow Kadath',
+      name:'The Dream-Quest of Unknow Kadath',
       author:'H.P. Lovecraft',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:"I, Robot",
+      name:"I, Robot",
       author:'Isaac Asimov',
       image:'example.jpg',
       points: 10,
       category: categories[3]._id
     },
     {
-      title:'The Arabian Nights',
+      name:'The Arabian Nights',
       author:'Unknown',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:"LeMorte D'Arthur",
+      name:"LeMorte D'Arthur",
       author:'Thomas Malory',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'Alices Adventures in Wonderland',
+      name:'Alices Adventures in Wonderland',
       author:'Lewis Carroll',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'Through the Looking-Glass',
+      name:'Through the Looking-Glass',
       author:'Lewis Carroll',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'Five Children and It',
+      name:'Five Children and It',
       author:'E. Nesbit',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'Ozma of Oz',
+      name:'Ozma of Oz',
       author:'L. Frank Baum',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'Mary Poppins',
+      name:'Mary Poppins',
       author:'P.L. Travers',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'The Lion, The Witch, and the Wardrobe',
+      name:'The Lion, The Witch, and the Wardrobe',
       author:'C.S. Lewis',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'The Palm-Wine Drinkard',
+      name:'The Palm-Wine Drinkard',
       author:'Amos Tutuola',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'The Voyage of the Dawn Treader',
+      name:'The Voyage of the Dawn Treader',
       author:'C.S. Lewis',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'The Fellowship of the Ring',
+      name:'The Fellowship of the Ring',
       author:'J.R.R. Tolkien',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'My Life in the Bush of Ghosts',
+      name:'My Life in the Bush of Ghosts',
       author:'Amos Tutuola',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'The Two Towers',
+      name:'The Two Towers',
       author:'J.R.R. Tolkien',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'The Return of the King',
+      name:'The Return of the King',
       author:'J.R.R. Tolkien',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'A Hero Born',
+      name:'A Hero Born',
       author:'Jin Yong',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'The Once & the Future King',
+      name:'The Once & the Future King',
       author:'T.H. White',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'James and the Giant Peach',
+      name:'James and the Giant Peach',
       author:'Roald Dahl',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'The Phantom Tollbooth',
+      name:'The Phantom Tollbooth',
       author:'Norton Juster',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'A Wrinkle in Time',
+      name:'A Wrinkle in Time',
       author:'Madeleine LEngle',
       image:'example.jpg',
       points: 10,
       category: categories[4]._id
     },
     {
-      title:'The Wandering Unicorn',
+      name:'The Wandering Unicorn',
       author:'Manuel Mujica Lainez',
       image:'example.jpg',
       points: 10,
@@ -732,7 +732,7 @@ db.once('open', async () => {
     lastName: 'Washington',
     email: 'pamela@testmail.com',
     password: 'password12345',
-    orders: [
+    readBooks: [
       {
         books: [books[0]._id, books[0]._id, books[1]._id]
       }

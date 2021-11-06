@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Book, Category, Order } = require('../models');
+const { User, Book, Category, ReadBook } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -29,35 +29,35 @@ const resolvers = {
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'orders.books',
+          path: 'readBooks.books',
           populate: 'category'
         });
 
-        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+        user.readBooks.sort((a, b) => b.readDate - a.readDate);
 
         return user;
       }
 
       throw new AuthenticationError('Not logged in');
     },
-    order: async (parent, { _id }, context) => {
+    readBook: async (parent, { _id }, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'orders.books',
+          path: 'readBooks.books',
           populate: 'category'
         });
 
-        return user.orders.id(_id);
+        return user.readBooks.id(_id);
       }
 
       throw new AuthenticationError('Not logged in');
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
-      const order = new Order({ books: args.books });
+      const readBook = new ReadBook({ books: args.books });
       const line_items = [];
 
-      const { books } = await order.populate('books').execPopulate();
+      const { books } = await readBook.populate('books').execPopulate();
 
       for (let i = 0; i < books.length; i++) {
         const book = await stripe.books.create({
@@ -96,14 +96,14 @@ const resolvers = {
 
       return { token, user };
     },
-    addOrder: async (parent, { books }, context) => {
+    addReadBook: async (parent, { books }, context) => {
       console.log(context);
       if (context.user) {
-        const order = new Order({ books });
+        const readBook = new ReadBook({ books });
 
-        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+        await User.findByIdAndUpdate(context.user._id, { $push: { readBooks: readBook } });
 
-        return order;
+        return readBook;
       }
 
       throw new AuthenticationError('Not logged in');

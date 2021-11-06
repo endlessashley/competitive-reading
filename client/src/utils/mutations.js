@@ -11,16 +11,15 @@ export const LOGIN = gql`
   }
 `;
 
-export const ADD_ORDER = gql`
-  mutation addOrder($books: [ID]!) {
-    addOrder(books: $books) {
-      purchaseDate
+export const ADD_READBOOK = gql`
+  mutation addReadBook($books: [ID]!) {
+    addReadBook(books: $books) {
+      readDate
       books {
         _id
         name
         description
         points
-        quantity
         category {
           name
         }

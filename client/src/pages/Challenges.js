@@ -20,15 +20,15 @@ function Challenges() {
         {user ? (
           <>
             <h2>
-              Order History for {user.firstName} {user.lastName}
+              Read History for {user.firstName} {user.lastName}
             </h2>
-            {user.orders.map((order) => (
-              <div key={order._id} className="my-2">
+            {user.readBooks.map((readBook) => (
+              <div key={readBook._id} className="my-2">
                 <h3>
-                  {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
+                  {new Date(parseInt(readBook.readDate)).toLocaleDateString()}
                 </h3>
                 <div className="flex-row">
-                  {order.books.map(({ _id, image, name, price }, index) => (
+                  {readBook.books.map(({ _id, image, name, price }, index) => (
                     <div key={index} className="card px-1 py-1">
                       <Link to={`/books/${_id}`}>
                         <img alt={name} src={`/images/${image}`} />

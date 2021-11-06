@@ -14,7 +14,7 @@ const Home = () => {
         <div className="col-sm-4">
           <BookList />
         </div>
-        <div classname="col-sm-4">
+        <div className="col-sm-4">
           <Shelf />
         </div>
       </div>

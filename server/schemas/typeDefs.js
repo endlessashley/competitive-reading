@@ -8,17 +8,21 @@ const typeDefs = gql`
 
   type Book {
     _id: ID
-    title: String
+    name: String
     author: String
     image: String
     points: Int
     category: Category
   }
 
-  type ReadBooks {
+  type ReadBook {
     _id: ID
-    ReadDate: String
+    readDate: String
     books: [Book]
+  }
+
+  type Checkout {
+    session: ID
   }
 
   type User {
@@ -26,7 +30,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
-    orders: [Order]
+    readBooks: [ReadBook]
   }
 
   type Auth {
@@ -39,13 +43,13 @@ const typeDefs = gql`
     books(category: ID, name: String): [Book]
     book(_id: ID!): Book
     user: User
-    order(_id: ID!): Order
+    readBook(_id: ID!): ReadBook
     checkout(books: [ID]!): Checkout
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addOrder(books: [ID]!): Order
+    addReadBook(books: [ID]!): ReadBook
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateBook(_id: ID!, quantity: Int!): Book
     login(email: String!, password: String!): Auth
