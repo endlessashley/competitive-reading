@@ -47,7 +47,6 @@ function CategoryMenu() {
     <div className="category-card">
       <h2>Choose a Challenge:</h2>
       {categories.map((item) => (
-        console.log('categories mapped'),
         <button
           key={item._id}
           onClick={() => {

@@ -18,7 +18,7 @@ export const ADD_READBOOK = gql`
       books {
         _id
         name
-        description
+        author
         points
         category {
           name
