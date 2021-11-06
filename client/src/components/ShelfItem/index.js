@@ -45,7 +45,7 @@ const ShelfItem = ({ item }) => {
         />
       </div>
       <div>
-        <div>{item.name}, ${item.price}</div>
+        <div>{item.name}, {item.points}</div>
         <div>
           <span>Times Read:</span>
           <input
