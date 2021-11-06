@@ -36,10 +36,10 @@ function CategoryMenu() {
     console.log('category updated')
   }, [categoryData, loading, dispatch]);
 
-  const handleClick = (id) => {
+  const handleClick = ({_id:id, name}) => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
-      currentCategory: id,
+      currentCategory: {id, name}
     });
   };
 
@@ -50,7 +50,7 @@ function CategoryMenu() {
         <button
           key={item._id}
           onClick={() => {
-            handleClick(item._id);
+            handleClick(item);
           
           }}
         >

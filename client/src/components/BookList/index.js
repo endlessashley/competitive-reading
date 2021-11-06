@@ -16,6 +16,7 @@ function BookList() {
 
   useEffect(() => {
     if (data) {
+      console.log(data)
       dispatch({
         type: UPDATE_BOOKS,
         books: data.books,
@@ -40,13 +41,13 @@ function BookList() {
     }
 
     return state.books.filter(
-      (book) => book.category._id === currentCategory
+      (book) => book.category._id === currentCategory.id
     );
   }
 
   return (
     <div className="my-2">
-      <h2>Your Books:</h2>
+      <h2>{state.currentCategory.name}</h2>
       {state.books.length ? (
         <div className="flex-row">
           {filterBooks().map((book) => (
