@@ -217,11 +217,33 @@ input:focus {
   background-color: antiquewhite;
   padding: 10px;
   border-radius: 5px;
+  width: 250px;
+  margin: 10px;
+  text-align: center;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
 }
 
 .category-card h2 {
   color: #06174B;
 }
+
+.category-card a {
+  color: #B12704;
+}
+
+.points {
+  background-color: #B12704;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  color: antiquewhite;
+  margin: 10px auto;
+}
+
+
 
 .error-text {
   color: var(--error);
@@ -233,6 +255,11 @@ ul {
 
 li {
   text-decoration: none;
+}
+
+.points-icon {
+  font-size: 85px;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 768px) {

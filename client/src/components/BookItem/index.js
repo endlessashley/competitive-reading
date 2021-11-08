@@ -4,6 +4,7 @@ import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_SHELF, UPDATE_SHELF_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+import {GiTrophy} from "react-icons/gi"
 
 function BookItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -13,6 +14,7 @@ function BookItem(item) {
     name,
     _id,
     points,
+    author,
     // quantity
   } = item;
 
@@ -40,17 +42,20 @@ function BookItem(item) {
   }
 
   return (
-    <div className="card px-1 py-1">
+    <div className="category-card">
       <Link to={`/books/${_id}`}>
         {/* <img
           alt={name}
           src={`/images/${image}`}
         /> */}
-        <p>{name}</p>
+        <p>{name}< br/> {author}</p>
+        
       </Link>
-      <div>
+      <div className="points">
         {/* <div>{quantity} {pluralize("item", quantity)} in stock</div> */}
         <span>{points} points</span>
+        <i className="points-icon" ><GiTrophy /></i>
+        
       </div>
       <button onClick={addToShelf}>Add to Shelf</button>
     </div>

@@ -11,6 +11,7 @@ export const QUERY_BOOKS = gql`
       image
       category {
         _id
+        name
       }
     }
   }

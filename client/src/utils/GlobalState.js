@@ -10,7 +10,7 @@ const StoreProvider = ({ value = [], ...props }) => {
     shelf: [],
     shelfOpen: false,
     categories: [],
-    currentCategory: '',
+    currentCategory: {},
   });
 
   return <Provider value={[state, dispatch]} {...props} />;
