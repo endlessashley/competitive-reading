@@ -29,7 +29,7 @@ const resolvers = {
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'readBooks.books',
+          path: 'readBook.books',
           populate: 'category'
         });
 
@@ -44,11 +44,11 @@ const resolvers = {
       console.log(context)
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'readBooks.books',
+          path: 'readBook.books',
           populate: 'category'
         });
 
-        return user.readBooks.id(_id);
+        return user.readBook.id(_id);
       }
 
       throw new AuthenticationError('Not logged in');

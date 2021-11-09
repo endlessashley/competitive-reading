@@ -47,11 +47,12 @@ export const QUERY_CATEGORIES = gql`
 `;
 
 export const QUERY_USER = gql`
+query user
   {
     user {
       firstName
       lastName
-      readbooks {
+      readBooks {
         _id
         readDate
         books {
@@ -59,7 +60,7 @@ export const QUERY_USER = gql`
           name
           author
           points
-          categories {
+          category {
             _id
             name
           }
