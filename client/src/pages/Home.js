@@ -14,9 +14,9 @@ const Home = () => {
         <div className="col-sm-8">
           <BookList />
         </div>
-        <div className="col-sm-4">
+        {/* <div className="col-sm-4">
           <Shelf />
-        </div>
+        </div> */}
       </div>
       
       

@@ -7,8 +7,6 @@ export const QUERY_BOOKS = gql`
       name
       author
       points
-
-      image
       category {
         _id
         name
@@ -32,7 +30,6 @@ export const QUERY_ALL_BOOKS = gql`
       name
       author
       points
-
       category {
         name
       }
@@ -54,7 +51,7 @@ export const QUERY_USER = gql`
     user {
       firstName
       lastName
-      readBooks {
+      readbooks {
         _id
         readDate
         books {
@@ -62,8 +59,10 @@ export const QUERY_USER = gql`
           name
           author
           points
-    
-          image
+          categories {
+            _id
+            name
+          }
         }
       }
     }

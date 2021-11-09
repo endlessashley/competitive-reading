@@ -11,6 +11,27 @@ export const LOGIN = gql`
   }
 `;
 
+// export const ADD_TO_BOOKSHELF = gql`
+// mutation addToBookshelf($userId: ID!, $book: ID!) {
+//   addToBookshelf(userId: $userId, book: $book) {
+//     _id
+//     name
+//     books {
+//       _id
+//       name
+//       author
+//       points
+//       category {
+//         name
+//       }
+//     }
+//   }
+// }
+// `;
+
+
+
+
 export const ADD_READBOOK = gql`
   mutation addReadBook($books: [ID]!) {
     addReadBook(books: $books) {

@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 const ReadBook = require('./ReadBook');
 
+
 const userSchema = new Schema({
   firstName: {
     type: String,
@@ -25,7 +26,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  readBooks: [ReadBook.schema]
+  readBooks: [ReadBook.schema],
 });
 
 // set up pre-save middleware to create password

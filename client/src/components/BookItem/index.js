@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_TO_SHELF, UPDATE_SHELF_QUANTITY } from "../../utils/actions";
-import { idbPromise } from "../../utils/helpers";
+// import { ADD_TO_SHELF, UPDATE_SHELF_QUANTITY } from "../../utils/actions";
+// import { idbPromise } from "../../utils/helpers";
 import {GiTrophy} from "react-icons/gi"
+import { ADD_READBOOK } from "../../utils/mutations";
 
 function BookItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -18,27 +19,31 @@ function BookItem(item) {
     // quantity
   } = item;
 
-  const { shelf } = state
+  // const { shelf } = state
 
-  const addToShelf = () => {
-    const itemInShelf = shelf.find((shelfItem) => shelfItem._id === _id)
+  const addReadbook = () => {
+
+
+
+
+    const itemInShelf = item.find((bookItem) => bookItem._id === _id)
     if (itemInShelf) {
       dispatch({
-        type: UPDATE_SHELF_QUANTITY,
+        type: ADD_READBOOK,
         _id: _id,
-        purchaseQuantity: parseInt(itemInShelf.purchaseQuantity) + 1
       });
-      idbPromise('shelf', 'put', {
-        ...itemInShelf,
-        purchaseQuantity: parseInt(itemInShelf.purchaseQuantity) + 1
-      });
-    } else {
-      dispatch({
-        type: ADD_TO_SHELF,
-        book: { ...item, purchaseQuantity: 1 }
-      });
-      idbPromise('shelf', 'put', { ...item, purchaseQuantity: 1 });
+      // idbPromise('shelf', 'put', {
+      //   ...itemInShelf,
+      //   purchaseQuantity: parseInt(itemInShelf.purchaseQuantity) + 1
+      // });
     }
+    //  else {
+    //   dispatch({
+    //     type: ADD_TO_SHELF,
+    //     book: { ...item, purchaseQuantity: 1 }
+    //   });
+    //   idbPromise('shelf', 'put', { ...item, purchaseQuantity: 1 });
+    // }
   }
 
   return (
@@ -57,7 +62,7 @@ function BookItem(item) {
         <i className="points-icon" ><GiTrophy /></i>
         
       </div>
-      <button onClick={addToShelf}>Add to Shelf</button>
+      <button onClick={addReadbook}>Add to Bookshelf</button>
     </div>
   );
 }
