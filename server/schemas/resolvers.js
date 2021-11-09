@@ -41,6 +41,7 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     readBook: async (parent, { _id }, context) => {
+      console.log(context)
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'readBooks.books',

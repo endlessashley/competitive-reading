@@ -9,6 +9,7 @@ import {
   REMOVE_FROM_SHELF,
   CLEAR_SHELF,
   TOGGLE_SHELF,
+  ADD_READBOOK
   
 } from "./actions";
 
@@ -79,7 +80,13 @@ export const reducer = (state, action) => {
       return {
         ...state,
         currentCategory: action.currentCategory
-      }
+      };
+
+      case ADD_READBOOK:
+        return {
+          ...state,
+          readBooks: action.readBooks
+        };
 
     default:
       return state;
