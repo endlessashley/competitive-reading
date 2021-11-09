@@ -1,7 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Book, Category, ReadBook } = require('../models');
 const { signToken } = require('../utils/auth');
-// const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
@@ -29,7 +28,7 @@ const resolvers = {
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'readBooks.books',
+          path: 'readBook.books',
           populate: 'category'
         });
 
@@ -44,51 +43,16 @@ const resolvers = {
       console.log(context)
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'readBooks.books',
+          path: 'readBook.books',
           populate: 'category'
         });
 
-        return user.readBooks.id(_id);
+        return user.readBook.id(_id);
       }
 
       throw new AuthenticationError('Not logged in');
     },
-    // checkout: async (parent, args, context) => {
-    //   const url = new URL(context.headers.referer).origin;
-    //   const readBook = new ReadBook({ books: args.books });
-    //   const line_items = [];
 
-    //   const { books } = await readBook.populate('books').execPopulate();
-
-    //   for (let i = 0; i < books.length; i++) {
-    //     const book = await stripe.books.create({
-    //       name: books[i].name,
-    //       author: books[i].author,
-    //       images: [`${url}/images/${books[i].image}`]
-    //     });
-
-        // const price = await stripe.prices.create({
-        //   book: book.id,
-        //   unit_amount: books[i].price * 100,
-        //   currency: 'usd',
-        // });
-
-        // line_items.push({
-        //   points: points.id,
-        //   quantity: 1
-        // });
-    //   }
-
-    //   const session = await stripe.checkout.sessions.create({
-    //     payment_method_types: ['card'],
-    //     line_items,
-    //     mode: 'payment',
-    //     success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-    //     cancel_url: `${url}/`
-    //   });
-
-    //   return { session: session.id };
-    // }
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -109,18 +73,7 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    // addToBookshelf: async (parent, { userID, book }) => {
-    //   return User.findOneAndUpdate(
-    //     { _id: userId },
-    //     {
-    //       $addToSet: { books: book },
-    //     },
-    //     {
-    //       new: true,
-    //       runValidators: true,
-    //     }
-    //   );
-    // },
+
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });
@@ -128,11 +81,7 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    updateBook: async (parent, { _id, quantity }) => {
-      const decrement = Math.abs(quantity) * -1;
 
-      return await Book.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
-    },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 

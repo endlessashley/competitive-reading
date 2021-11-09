@@ -2,16 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import Shelf from '../components/Shelf';
+
 import { useStoreContext } from '../utils/GlobalState';
 import {
-  // UPDATE_SHELF_QUANTITY,
+
   UPDATE_BOOKS,
-  // ADD_TO_SHELF,
-  // REMOVE_FROM_SHELF,
 } from '../utils/actions';
 import { QUERY_BOOKS } from '../utils/queries';
-// import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
 
 function Detail() {
@@ -22,7 +19,8 @@ function Detail() {
 
   const { loading, data } = useQuery(QUERY_BOOKS);
 
-  const { books, shelf } = state;
+  const { books, 
+  } = state;
 
   useEffect(() => {
     if (books.length) {
@@ -32,55 +30,13 @@ function Detail() {
         type: UPDATE_BOOKS,
         books: data.books,
       });
-
-      // data.books.forEach((book) => {
-      //   idbPromise('books', 'put', book);
-      // });
     }
-    // else if (!loading) {
-    //   idbPromise('books', 'get').then((indexedBooks) => {
-    //     dispatch({
-    //       type: UPDATE_BOOKS,
-    //       books: indexedBooks,
-    //     });
-    //   });
-    // }
   }, [books, data, loading, dispatch, id]);
 
-  // const addToShelf = () => {
-  //   const itemInShelf = shelf.find((shelfItem) => shelfItem._id === id);
-  //   if (itemInShelf) {
-  //     dispatch({
-  //       type: UPDATE_SHELF_QUANTITY,
-  //       _id: id,
-  //       purchaseQuantity: parseInt(itemInShelf.purchaseQuantity) + 1,
-  //     });
-  //     idbPromise('shelf', 'put', {
-  //       ...itemInShelf,
-  //       purchaseQuantity: parseInt(itemInShelf.purchaseQuantity) + 1,
-  //     });
-  //   } else {
-  //     dispatch({
-  //       type: ADD_TO_SHELF,
-  //       book: { ...currentBook, purchaseQuantity: 1 },
-  //     });
-  //     idbPromise('shelf', 'put', { ...currentBook, purchaseQuantity: 1 });
-  //   }
-  // };
-
-  // const removeFromShelf = () => {
-  //   dispatch({
-  //     type: REMOVE_FROM_SHELF,
-  //     _id: currentBook._id,
-  //   });
-
-  //   idbPromise('shelf', 'delete', { ...currentBook });
-  // };
 
   return (
     <>
       {currentBook 
-      // && shelf
        ? (
         <div className="container my-1">
           <Link to="/">← Back to Home</Link>
@@ -103,14 +59,10 @@ function Detail() {
             </button> */}
           </p>
 
-          {/* <img
-            src={`/images/${currentBook.image}`}
-            alt={currentBook.name}
-          /> */}
+  
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
-      <Shelf />
     </>
   );
 }

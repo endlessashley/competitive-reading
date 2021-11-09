@@ -10,7 +10,7 @@ const readBookSchema = new Schema({
   books: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Book'
+      ref: 'User'
     }
   ]
 });

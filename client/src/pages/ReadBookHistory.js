@@ -10,6 +10,7 @@ function ReadBookHistory() {
 
   if (data) {
     user = data.user;
+    console.log(user)
   }
 
   return (
@@ -24,14 +25,10 @@ function ReadBookHistory() {
             </h2>
             {user.readBooks.map((readBook) => (
               <div key={readBook._id} className="my-2">
-                <h3>
-                  {new Date(parseInt(readBook.readDate)).toLocaleDateString()}
-                </h3>
                 <div className="flex-row">
-                  {readBook.books.map(({ _id, image, name, points }, index) => (
+                  {readBook.books.map(({ _id, name, points }, index) => (
                     <div key={index} className="card px-1 py-1">
                       <Link to={`/books/${_id}`}>
-                        {/* <img alt={name} src={`/images/${image}`} /> */}
                         <p>{name}</p>
                       </Link>
                       <div>
