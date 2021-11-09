@@ -22,7 +22,7 @@ function BookItem({item}) {
 
   // const { shelf } = state
 
-  const addReadbook = () => {
+  const addReadBook = () => {
 
 
 
@@ -35,8 +35,8 @@ function BookItem({item}) {
         name: name,
         author: author,
         points: points
-
       });
+      
   }
 
   return (
@@ -50,7 +50,7 @@ function BookItem({item}) {
         <i className="points-icon" ><GiTrophy /></i>
         
       </div>
-      <button onClick={addReadbook}>Add to Bookshelf</button>
+      <button onClick={addReadBook}>Add to Bookshelf</button>
     </div>
   );
 }

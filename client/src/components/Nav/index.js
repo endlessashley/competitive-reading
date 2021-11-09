@@ -2,6 +2,9 @@ import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 
+import {GiBookshelf, GiTrophy, GiCardRandom, GiStrong} from "react-icons/gi"
+import ReactTooltip from 'react-tooltip';
+
 function Nav() {
 
   function showNavigation() {

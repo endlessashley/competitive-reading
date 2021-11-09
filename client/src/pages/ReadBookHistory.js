@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
+import {GiTrophy} from "react-icons/gi"
+
+import NavIcons from "../components/NavIcons";
+
 function ReadBookHistory() {
   const { data } = useQuery(QUERY_USER);
   let user;
@@ -26,13 +30,16 @@ function ReadBookHistory() {
             {user.readBooks.map((readBook) => (
               <div key={readBook._id} className="my-2">
                 <div className="flex-row">
-                  {readBook.books.map(({ _id, name, points }, index) => (
-                    <div key={index} className="card px-1 py-1">
+                  {readBook.books.map(({ _id, name, author, points }, index) => (
+                    <div key={index} className="category-card">
                       <Link to={`/books/${_id}`}>
-                        <p>{name}</p>
+                        <p>{name}
+                        < br/>
+                        {author}</p>
                       </Link>
-                      <div>
-                        <span>{points}</span>
+                      <div className="points"> 
+                        <span>{points} points</span>
+                        <i className="points-icon"><GiTrophy/></i>
                       </div>
                     </div>
                   ))}
@@ -41,6 +48,7 @@ function ReadBookHistory() {
             ))}
           </>
         ) : null}
+        <NavIcons/>
       </div>
     </>
   );

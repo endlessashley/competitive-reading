@@ -1,8 +1,8 @@
 import React from "react";
 import BookList from "../components/BookList";
 import CategoryMenu from "../components/CategoryMenu";
-import Shelf from "../components/Shelf";
-import ViewChallenges from "../components/ViewChallenges"
+import NavIcons from "../components/NavIcons";
+// import ViewChallenges from "../components/ViewChallenges"
 
 const Home = () => {
   return (
@@ -14,9 +14,7 @@ const Home = () => {
         <div className="col-sm-8">
           <BookList />
         </div>
-        {/* <div className="col-sm-4">
-          <Shelf />
-        </div> */}
+      <NavIcons/>
       </div>
       
       
