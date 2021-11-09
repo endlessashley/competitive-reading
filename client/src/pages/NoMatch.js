@@ -1,5 +1,6 @@
 import React from "react";
 import Jumbotron from "../components/Jumbotron";
+import NavIcons from "../components/NavIcons";
 
 const NoMatch = () => {
   return (
@@ -12,6 +13,7 @@ const NoMatch = () => {
           </span>
         </h1>
       </Jumbotron>
+      <NavIcons/>
     </div>
   );
 };

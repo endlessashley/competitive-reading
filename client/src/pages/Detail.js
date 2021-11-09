@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
+import NavIcons from '../components/NavIcons';
 
 import { useStoreContext } from '../utils/GlobalState';
 import {
@@ -58,8 +59,7 @@ function Detail() {
               Remove from Shelf
             </button> */}
           </p>
-
-  
+            <NavIcons/>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}

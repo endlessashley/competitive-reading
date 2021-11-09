@@ -7,7 +7,7 @@ import ShelfItem from '../ShelfItem';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_SHELF, ADD_MULTIPLE_TO_SHELF } from '../../utils/actions';
-import './style.css';
+// import './style.css';
 import {GiBookshelf, GiTrophy, GiCardRandom, GiStrong} from "react-icons/gi"
 import ReactTooltip from 'react-tooltip';
 

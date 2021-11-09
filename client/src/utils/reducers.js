@@ -6,10 +6,11 @@ import {
   UPDATE_CURRENT_CATEGORY,
   ADD_MULTIPLE_TO_SHELF,
   UPDATE_SHELF_QUANTITY,
-  REMOVE_FROM_SHELF,
+  // REMOVE_FROM_SHELF,
   CLEAR_SHELF,
   TOGGLE_SHELF,
-  ADD_READBOOK
+  ADD_READBOOK,
+  REMOVE_READBOOK
   
 } from "./actions";
 
@@ -46,16 +47,16 @@ export const reducer = (state, action) => {
         })
       };
 
-    case REMOVE_FROM_SHELF:
-      let newState = state.shelf.filter(book => {
-        return book._id !== action._id;
-      });
+    // case REMOVE_FROM_SHELF:
+    //   let newState = state.shelf.filter(book => {
+    //     return book._id !== action._id;
+    //   });
 
-      return {
-        ...state,
-        shelfOpen: newState.length > 0,
-        shelf: newState
-      };
+      // return {
+      //   ...state,
+      //   shelfOpen: newState.length > 0,
+      //   shelf: newState
+      // };
 
     case CLEAR_SHELF:
       return {
@@ -87,6 +88,15 @@ export const reducer = (state, action) => {
           ...state,
           readBooks: action.readBooks
         };
+      
+        case REMOVE_READBOOK:
+          let newState = state.readBook.filter(book => {
+            return book._id !== action._id;
+          });
+          return {
+            ...state,
+            readBook: newState
+          };
 
     default:
       return state;
