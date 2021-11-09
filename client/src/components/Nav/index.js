@@ -10,7 +10,7 @@ function Nav() {
         <ul className="flex-row">
           <li className="mx-1">
             <Link to="/readBookHistory">
-              Read History
+              View Bookshelf
             </Link>
           </li>
           <li className="mx-1">

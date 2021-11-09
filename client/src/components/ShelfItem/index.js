@@ -15,45 +15,42 @@ const ShelfItem = ({ item }) => {
     idbPromise('shelf', 'delete', { ...item });
 
   };
+  
 
-  const onChange = (e) => {
-    const value = e.target.value;
-    if (value === '0') {
-      dispatch({
-        type: REMOVE_FROM_SHELF,
-        _id: item._id
-      });
-      idbPromise('shelf', 'delete', { ...item });
+  // const onChange = (e) => {
+  //   const value = e.target.value;
+  //   if (value === '0') {
+  //     dispatch({
+  //       type: REMOVE_FROM_SHELF,
+  //       _id: item._id
+  //     });
+  //     idbPromise('shelf', 'delete', { ...item });
 
-    } else {
-      dispatch({
-        type: UPDATE_SHELF_QUANTITY,
-        _id: item._id,
-        purchaseQuantity: parseInt(value)
-      });
-      idbPromise('shelf', 'put', { ...item, purchaseQuantity: parseInt(value) });
+  //   } else {
+  //     dispatch({
+  //       type: UPDATE_SHELF_QUANTITY,
+  //       _id: item._id,
+  //       purchaseQuantity: parseInt(value)
+  //     });
+  //     idbPromise('shelf', 'put', { ...item, purchaseQuantity: parseInt(value) });
 
-    }
-  }
+  //   }
+  // }
 
   return (
     <div className="flex-row">
       <div>
-        <img
-          src={`/images/${item.image}`}
-          alt=""
-        />
-      </div>
-      <div>
         <div>{item.name}, {item.points}</div>
         <div>
-          <span>Times Read:</span>
+          {/* <span>Times Read:</span>
           <input
             type="number"
             placeholder="1"
             value={item.purchaseQuantity}
             onChange={onChange}
-          />
+          /> */}
+          {/* <button onClick={addToShelf}>Mark as Read</button> */}
+
           <span
             role="img"
             aria-label="trash"

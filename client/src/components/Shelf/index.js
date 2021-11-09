@@ -60,14 +60,16 @@ const Shelf = () => {
     const bookIds = [];
 
     state.shelf.forEach((item) => {
-      for (let i = 0; i < item.purchaseQuantity; i++) {
+      // for (let i = 0; i < item.purchaseQuantity; i++) {
         bookIds.push(item._id);
-      }
+      // }
+      
     });
 
     getCheckout({
       variables: { books: bookIds },
     });
+    console.log(bookIds)
   }
 
       if (!state.shelfOpen) {
@@ -113,9 +115,9 @@ const Shelf = () => {
 
             {/* Check to see if the user is logged in. If so render a button to check out */}
             {Auth.loggedIn() ? (
-              <button ></button>
+              <button onClick={submitCheckout}>Add to Score</button>
             ) : (
-              <span>(log in to save your reading list.)</span>
+              <span>(Log in to mark as read.)</span>
             )}
           </div>
         </div>
@@ -124,7 +126,7 @@ const Shelf = () => {
           <span role="img" aria-label="shocked">
             😱
           </span>
-          You haven't added anything to your Shelf yet!
+          You haven't added anything to your bookshelf yet!
         </h3>
       )}
     </div>
