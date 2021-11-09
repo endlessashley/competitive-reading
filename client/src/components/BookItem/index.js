@@ -8,16 +8,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import {GiTrophy} from "react-icons/gi"
 import { ADD_READBOOK } from "../../utils/mutations";
 
-<<<<<<< Updated upstream
-import { ADD_TO_SHELF, UPDATE_SHELF_QUANTITY } from "../../utils/actions";
-import { idbPromise } from "../../utils/helpers";
-import {GiTrophy} from "react-icons/gi"
-
-
-function BookItem(item) {
-=======
 function BookItem({item}) {
->>>>>>> Stashed changes
   const [state, dispatch] = useStoreContext();
 
   const {
