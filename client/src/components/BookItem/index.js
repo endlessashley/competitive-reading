@@ -32,33 +32,20 @@ function BookItem({item}) {
       dispatch({
         type: ADD_READBOOK,
         _id: _id,
+        name: name,
+        author: author,
+        points: points
+
       });
-      // idbPromise('shelf', 'put', {
-      //   ...itemInShelf,
-      //   purchaseQuantity: parseInt(itemInShelf.purchaseQuantity) + 1
-      // });
-    // }
-    //  else {
-    //   dispatch({
-    //     type: ADD_TO_SHELF,
-    //     book: { ...item, purchaseQuantity: 1 }
-    //   });
-    //   idbPromise('shelf', 'put', { ...item, purchaseQuantity: 1 });
-    // }
   }
 
   return (
     <div className="category-card">
       <Link to={`/books/${_id}`}>
-        {/* <img
-          alt={name}
-          src={`/images/${image}`}
-        /> */}
         <p>{name}< br/> {author}</p>
         
       </Link>
       <div className="points">
-        {/* <div>{quantity} {pluralize("item", quantity)} in stock</div> */}
         <span>{points} points</span>
         <i className="points-icon" ><GiTrophy /></i>
         
