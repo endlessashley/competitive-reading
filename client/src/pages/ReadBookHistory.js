@@ -9,14 +9,16 @@ import {GiTrophy} from "react-icons/gi"
 import NavIcons from "../components/NavIcons";
 
 function ReadBookHistory() {
-  const { data } = useQuery(QUERY_USER);
-  let user;
-
-  if (data) {
-    user = data.user;
-    console.log(user)
-  }
-
+    const { data } = useQuery(QUERY_USER);
+    let user;
+    let totalPoints = 0;
+  
+    if (data) {
+      user = data.user;
+      console.log(user)
+      totalPoints = user.readBooks.reduce((score) => score + readBook.points)
+    }
+  
   return (
     <>
       <div className="container my-1">
