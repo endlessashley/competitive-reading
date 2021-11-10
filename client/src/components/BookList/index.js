@@ -53,12 +53,6 @@ function BookList() {
           {filterBooks().map((book) => (
             <BookItem
               key={book._id}
-              // _id={book._id}
-              // image={book.image}
-              // name={book.name}
-              // author={book.author}
-              // points={book.points}
-              // quantity={book.quantity}
               item={book}
             />
           ))}
