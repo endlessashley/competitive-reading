@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
+import { GiTrophy } from "react-icons/gi"
+
 import NavIcons from '../components/NavIcons';
 
 import { useStoreContext } from '../utils/GlobalState';
@@ -41,17 +43,20 @@ function Detail() {
        ? (
         <div className="container my-1">
           <Link to="/">← Back to Home</Link>
+          <div className="category-card">
 
           <h2>{currentBook.name}</h2>
 
           <p>{currentBook.author}</p>
 
           <p>
-            <strong>Points:</strong>{currentBook.points}{' '}
-            <button>Mark as Complete</button>
+          <div className="points">
+            {currentBook.points}{' '} points
+            <i className="points-icon"><GiTrophy /></i>
+          </div>
             <button>Remove from Bookshelf</button>
 
-            {/* <button onClick={addToShelf}>Add to Shelf</button>
+            {/* 
             <button
               disabled={!shelf.find((p) => p._id === currentBook._id)}
               onClick={removeFromShelf}
@@ -59,6 +64,7 @@ function Detail() {
               Remove from Shelf
             </button> */}
           </p>
+          </div>
             <NavIcons/>
         </div>
       ) : null}
