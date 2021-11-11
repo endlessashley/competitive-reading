@@ -27,24 +27,11 @@ function ReadBookHistory() {
             <h2>
               {user.firstName} {user.lastName}'s Completed Bookshelf
             </h2>
-            {/* <h2>
-              {user.readBooks[0]._id}
-            </h2> */}
             {user.readBooks.map((readBook) => (
               <div key={readBook._id} className="my-2">
                 <div className="flex-row">
-                  {/* <div>
-                    <h2>{readBook._id}</h2>
-                  </div>
-                  <div>
 
-                    <h2>{readBook.readDate}</h2>
-                  </div>
-                  <div
-                  //  key={index} */}
                    <div className="category-card">
-                     <h2>{readBook._id}</h2>
-                     <h2>{readBook.readDate}</h2>
 
                     <Link to={`/books/${readBook.bookId}`}>
                       <p>{readBook.name}
