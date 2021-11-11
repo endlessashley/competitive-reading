@@ -88,7 +88,7 @@ export const reducer = (state, action) => {
         
         return {
           ...state,
-          readBooks: [...state.readBooks, action.bookId]
+          readBooks: [...state.readBooks, action.bookId, action.name, action.author, action.points]
         };
       
         case REMOVE_READBOOK:
