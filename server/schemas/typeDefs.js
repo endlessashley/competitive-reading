@@ -17,7 +17,10 @@ const typeDefs = gql`
   type ReadBook {
     _id: ID
     readDate: String
-    books: [Book]
+    bookId: ID
+    name: String
+    author: String
+    points: Int
   }
 
 
