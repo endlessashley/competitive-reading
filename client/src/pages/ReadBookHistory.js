@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
-import {GiTrophy} from "react-icons/gi"
+import { GiTrophy } from "react-icons/gi"
 
 import NavIcons from "../components/NavIcons";
 
@@ -33,33 +33,36 @@ function ReadBookHistory() {
             {user.readBooks.map((readBook) => (
               <div key={readBook._id} className="my-2">
                 <div className="flex-row">
-                  <div>
+                  {/* <div>
                     <h2>{readBook._id}</h2>
                   </div>
                   <div>
-                    
+
                     <h2>{readBook.readDate}</h2>
                   </div>
-                  
-                  {/* {readBook.books.map(({ _id, name, author, points }, index) => (
-                    <div key={index} className="category-card">
-                      <Link to={`/books/${_id}`}>
-                        <p>{name}
-                        < br/>
-                        {author}</p>
-                      </Link>
-                      <div className="points"> 
-                        <span>{points} points</span>
-                        <i className="points-icon"><GiTrophy/></i>
-                      </div>
+                  <div
+                  //  key={index} */}
+                   <div className="category-card">
+                     <h2>{readBook._id}</h2>
+                     <h2>{readBook.readDate}</h2>
+                    <Link to={`/books/${readBook._id}`}>
+                      <p>{readBook.name}
+                        < br />
+                        {readBook.author}</p>
+                    </Link>
+                    <div className="points">
+                      <span>{readBook.points} points</span>
+                      <i className="points-icon"><GiTrophy /></i>
                     </div>
-                  ))} */}
+                  </div>
+
+
                 </div>
               </div>
             ))}
           </>
         ) : null}
-        <NavIcons/>
+        <NavIcons />
       </div>
     </>
   );
