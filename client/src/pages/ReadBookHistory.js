@@ -11,10 +11,15 @@ import NavIcons from "../components/NavIcons";
 function ReadBookHistory() {
   const { data } = useQuery(QUERY_USER);
   let user;
-
+  let totalPoints = 0;
+  
   if (data) {
     user = data.user;
-    console.log(user)
+    console.log(user) 
+    for (let i = 0; i < user.readBooks.length; i++) {
+      totalPoints += user.readBooks[i].points ;
+    };
+    // totalPoints = user.readBooks.reduce((score) => score + 10)
   }
 
   return (
@@ -27,6 +32,7 @@ function ReadBookHistory() {
             <h2>
               {user.firstName} {user.lastName}'s Completed Bookshelf
             </h2>
+            <h2>Your ReaderScore™: {totalPoints}</h2>
             {user.readBooks.map((readBook) => (
               <div key={readBook._id} className="my-2">
                 <div className="flex-row">
