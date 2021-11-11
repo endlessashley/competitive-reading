@@ -70,13 +70,4 @@ query user
   }
 `;
 
-export const QUERY_READBOOKS = gql`
-query readBooks
-{
-    readBooks {
-              books
-              _id
-              readDate
-    }
-  }
-`;
+
