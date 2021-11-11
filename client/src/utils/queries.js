@@ -55,16 +55,10 @@ query user
       readBooks {
         _id 
         readDate
-        books {
-          _id
+        bookId
           name
           author
           points
-          category {
-            _id
-            name
-          }
-        }
       }
     }
   }

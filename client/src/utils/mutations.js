@@ -15,17 +15,14 @@ export const LOGIN = gql`
 export const ADD_READBOOK = gql`
   mutation addReadBook($bookId: ID!, $name: String!, $author: String! $points: Int ) {
     addReadBook(bookId: $bookId, name: $name, author: $author, points: $points) {
-      books {
-        _id
+      
+        bookId
         name
         author
         points
-        category {
-          name
-        }
+
       }
     }
-  }
 `;
 
 export const ADD_USER = gql`

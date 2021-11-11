@@ -45,18 +45,18 @@ function ReadBookHistory() {
                    <div className="category-card">
                      <h2>{readBook._id}</h2>
                      <h2>{readBook.readDate}</h2>
-                    <Link to={`/books/${readBook.books.bookId}`}>
-                      <p>{readBook.books.name}
+
+                    <Link to={`/books/${readBook.bookId}`}>
+                      <p>{readBook.name}
                         < br />
-                        {readBook.books.author}</p>
+                        {readBook.author}</p>
                     </Link>
                     <div className="points">
-                      <span>{readBook.books.points} points</span>
+                      <span>{readBook.points} points</span>
                       <i className="points-icon"><GiTrophy /></i>
                     </div>
+
                   </div>
-
-
                 </div>
               </div>
             ))}
