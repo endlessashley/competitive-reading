@@ -10,6 +10,7 @@ import NavIcons from "../components/NavIcons";
 
 function ReadBookHistory() {
   const { data } = useQuery(QUERY_USER);
+  const { dataOne } = useQuery(QUERY_READBOOKS)
   let user;
 
   if (data) {
@@ -27,7 +28,10 @@ function ReadBookHistory() {
             <h2>
               {user.firstName} {user.lastName}'s Completed Bookshelf
             </h2>
-            {user.readBooks.map((readBook) => (
+            <h2>
+              {user.readBooks.bookId}
+            </h2>
+            {/* {user.readBooks.map((readBook) => (
               <div key={readBook._id} className="my-2">
                 <div className="flex-row">
                   {readBook.books.map(({ _id, name, author, points }, index) => (
@@ -45,7 +49,7 @@ function ReadBookHistory() {
                   ))}
                 </div>
               </div>
-            ))}
+            ))} */}
           </>
         ) : null}
         <NavIcons/>
