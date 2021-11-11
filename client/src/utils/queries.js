@@ -53,7 +53,7 @@ query user
       firstName
       lastName
       readBooks {
-        _id
+        _id 
         readDate
         books {
           _id
