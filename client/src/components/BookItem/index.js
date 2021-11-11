@@ -1,4 +1,5 @@
 import React from "react";
+import { useMutation } from '@apollo/client';
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
@@ -15,17 +16,19 @@ function BookItem({item}) {
     author,
   } = item;
 
+  const [addReadBook, { error }] = useMutation(ADD_READBOOK);
 
-  const addReadBook = () => {
-      dispatch({
-        type: ADD_READBOOK,
-        _id: _id,
-        name: name,
-        author: author,
-        points: points
+
+  const handleButtonClick = async () => {
+
+    try {
+      const data = await addReadBook({
+        variables: { bookId: _id },
       });
-      
-  }
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div className="category-card">
@@ -38,7 +41,7 @@ function BookItem({item}) {
         <i className="points-icon" ><GiTrophy /></i>
         
       </div>
-      <button onClick={addReadBook}>Add to Bookshelf</button>
+      <button onClick={handleButtonClick}>Add to Bookshelf</button>
     </div>
   );
 }

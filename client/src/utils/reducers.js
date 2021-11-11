@@ -15,6 +15,7 @@ import {
 } from "./actions";
 
 export const reducer = (state, action) => {
+  console.log(action);
   switch (action.type) {
     case UPDATE_BOOKS:
       return {
@@ -84,9 +85,10 @@ export const reducer = (state, action) => {
       };
 
       case ADD_READBOOK:
+        
         return {
           ...state,
-          readBooks: action.readBooks
+          readBooks: [...state.readBooks, action.bookId]
         };
       
         case REMOVE_READBOOK:
