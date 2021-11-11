@@ -61,10 +61,11 @@ const resolvers = {
 
       return { token, user };
     },
-    addReadBook: async (parent, { books }, context) => {
-      console.log(context);
+    addReadBook: async (parent, { bookId }, context) => {
+      
       if (context.user) {
-        const readBook = new ReadBook({ books });
+        const readBook = new ReadBook({ bookId });
+        console.log(readBook);
 
         await User.findByIdAndUpdate(context.user._id, { $push: { readBooks: readBook } });
 

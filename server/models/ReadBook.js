@@ -7,12 +7,11 @@ const readBookSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  books: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  ]
+  bookId: {
+    type: String,
+    required: true,
+    trim: true
+  }
 });
 
 const ReadBook = mongoose.model('ReadBook', readBookSchema);
