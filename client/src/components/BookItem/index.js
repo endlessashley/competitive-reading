@@ -25,7 +25,9 @@ function BookItem({item}) {
       const data = await addReadBook({
         variables: { bookId: _id, name: name, points: points, author: author },
       
-      });
+      })
+      
+      console.log(variables);
     } catch (err) {
       console.error(err);
     }
