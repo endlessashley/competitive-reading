@@ -8,13 +8,13 @@ import NavIcons from '../components/NavIcons';
 
 import { useStoreContext } from '../utils/GlobalState';
 import {
-
+  REMOVE_READBOOK,
   UPDATE_BOOKS,
 } from '../utils/actions';
 import { QUERY_BOOKS } from '../utils/queries';
 import spinner from '../assets/spinner.gif';
 
-function Detail() {
+export default function Detail() {
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
 
@@ -36,6 +36,13 @@ function Detail() {
     }
   }, [books, data, loading, dispatch, id]);
 
+  const removeReadbook = () => {
+    dispatch({
+      type: REMOVE_READBOOK,
+      _id: currentBook._id,
+    });
+    console.log(REMOVE_READBOOK)
+  }
 
   return (
     <>
@@ -49,12 +56,17 @@ function Detail() {
 
           <p>{currentBook.author}</p>
 
-          <p>
+          
           <div className="points">
             {currentBook.points}{' '} points
             <i className="points-icon"><GiTrophy /></i>
           </div>
-            <button>Remove from Bookshelf</button>
+          <button
+              // disabled={!book.find((p) => p._id === currentBook._id)}
+              onClick={removeReadbook}
+            >
+              Remove from Cart
+            </button>
 
             {/* 
             <button
@@ -63,7 +75,7 @@ function Detail() {
             >
               Remove from Shelf
             </button> */}
-          </p>
+          
           </div>
             <NavIcons/>
         </div>
@@ -73,4 +85,3 @@ function Detail() {
   );
 }
 
-export default Detail;

@@ -92,8 +92,10 @@ export const reducer = (state, action) => {
         };
       
         case REMOVE_READBOOK:
-          let newState = state.readBook.filter(book => {
-            return book._id !== action._id;
+          let newState = state.readBook.filter(readbooks => {
+            console.log(state.readBook)
+            return readbooks._id !== action._id;
+        
           });
           return {
             ...state,
