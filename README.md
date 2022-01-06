@@ -1,5 +1,3 @@
-# competitive-reading
+# Reader, Set, GO!
 
-read, but make it fashion
-
-what does that mean?
+An app for users to keep track of books they've read to compete to reach the highest "ReaderScore"
